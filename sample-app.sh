@@ -16,7 +16,7 @@ echo "COPY ./static /home/myapp/static/ " >> tempdir/Dockerfile
 echo "COPY ./templates /home/myapp/templates/ " >> tempdir/Dockerfile
 echo "COPY sample_app.py /home/myapp/" >> tempdir/Dockerfile
 
-echo "EXPOSE 8080" >> tempdir/Dockerfile
+echo "EXPOSE 5050" >> tempdir/Dockerfile
 
 echo 'CMD ["python", "/home/myapp/sample_app.py"]' >> tempdir/Dockerfile
 
@@ -24,7 +24,7 @@ cd tempdir
 
 docker build -t sampleapp .
 
-docker run -t -d -p 8080:8080 --name sample_running sampleapp
+docker run -t -d -p 5050:5050 --name sample_running sampleapp
 
 
 docker ps -a
